@@ -27,7 +27,7 @@ def about():
         From: %s &lt;%s&gt;
         %s
         """ % (form.name.data, form.email.data, form.body.data)
-        mail.send(msg)
+        server.send(msg)
         server.quit()
 
         return render_template('about.html', success=True)
