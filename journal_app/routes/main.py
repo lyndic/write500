@@ -38,7 +38,7 @@ def about():
         # """ % (form.name.data, form.email.data, form.body.data)
         server.login("contact500words@gmail.com", "ruffruff2020")
         server.send(msg)
-        server.quit()
+        server.close()
 
         return render_template('about.html', success=True)
     return render_template('about.html', form=form)
