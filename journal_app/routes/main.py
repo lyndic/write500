@@ -4,6 +4,8 @@ from flask_mail import Message
 from datetime import datetime
 import smtplib
 
+from journal_app.settings import (mail_username, mail_password, mail_server,
+                                  mail_port, mail_receipt)
 from journal_app.extensions import db, mail
 from journal_app.models import Entry, User, EntryForm, ContactForm
 
@@ -16,8 +18,8 @@ def about():
     if current_user.is_authenticated:
         return redirect(url_for('main.aboutus'))
     if form.validate_on_submit():
-        fromAddr = "contact500words@gmail.com"
-        toAddr = "lyndi321@gmail.com"
+        fromAddr = mail_username
+        toAddr = mail_receipt
         userEmail = form.email.data
         name = form.name.data
         subject = form.subject.data
@@ -26,10 +28,10 @@ def about():
         msg = """Name: %s\nEmail: %s\nSubject: %s\n\n%s
         """ % (name, ", ".join(userEmail), subject, body)
 
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP(mail_server, mail_port)
         server.ehlo()
         server.starttls()
-        server.login("contact500words@gmail.com", "ruffruff2020")
+        server.login(mail_username, mail_password)
         server.sendmail(fromAddr, toAddr, msg)
         server.close()
         # with mail.connect() as conn:
@@ -86,7 +88,8 @@ def write():
         new_entry = Entry(title=form.title.data,
                           content=form.content.data,
                           word_count=request.form['totalCount'],
-                          date_submitted=str(datetime.utcnow().strftime('%Y-%m-%d')))
+                          date_submitted=str(
+                              datetime.utcnow().strftime('%Y-%m-%d')))
         new_entry.user = current_user
         db.session.add(new_entry)
         db.session.commit()
