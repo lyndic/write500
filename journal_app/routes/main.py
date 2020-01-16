@@ -24,8 +24,8 @@ def about():
         name = form.name.data
         subject = form.subject.data
         body = ("Name: " + form.name.data
-                + "\n Email: " + form.email.data
-                + "\n" + form.body.data)
+                + "\n\nEmail: " + form.email.data
+                + "\n\n" + form.body.data)
 
         msg = """Name: %s\nEmail: %s\nSubject: %s\n\n%s
         """ % (name, ", ".join(userEmail), subject, body)

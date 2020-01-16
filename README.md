@@ -1,13 +1,9 @@
 <!-- Headings -->
 # Write 500
 
-## A minimal journal app for all.
-
-
-
-## Version 1.0.0
-
+ A minimal journal app for all.
 ---
+ Version 1.0.0
 
 ## Goals/Vision
 
@@ -18,3 +14,5 @@ Write 500 is a simple writing app that minimizes the social media noise so users
 * Increase users' average word count over time.
 * Create a clean app with no social pressure.
     * Cultivate an inviting space for people to *just write*.
+---
+ Check out [Write500!](https://write500.heroku.com)
