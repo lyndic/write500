@@ -14,15 +14,16 @@ def about():
     form = ContactForm()
     if current_user.is_authenticated:
         return redirect(url_for('main.aboutus'))
-    if form.validate_on_submit() and mail.connect():
-        msg = Message(form.subject.data,
-                      sender='contact500words@gmail.com',
-                      recipients=['lyndi321@gmail.com'])
-        msg.body = """
-        From: %s &lt;%s&gt;
-        %s
-        """ % (form.name.data, form.email.data, form.body.data)
-        mail.send(msg)
+    if form.validate_on_submit():
+        with mail.connect() as conn:
+            msg = Message(form.subject.data,
+                        sender='contact500words@gmail.com',
+                        recipients=['lyndi321@gmail.com'])
+            msg.body = """
+            From: %s &lt;%s&gt;
+            %s
+            """ % (form.name.data, form.email.data, form.body.data)
+            conn.send(msg)
 
         return render_template('about.html', success=True)
     return render_template('about.html', form=form)

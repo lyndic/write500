@@ -9,3 +9,6 @@ MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL')
 MAIL_USE_TSL = os.environ.get('MAIL_USE_TSL')
 MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER')
+MAIL_MAX_EMAILS = None
+MAIL_ASCII_ATTACHMENTS = False
