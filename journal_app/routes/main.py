@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import current_user, login_required
 from flask_mail import Message
 from datetime import datetime
@@ -15,7 +15,9 @@ def about():
     if current_user.is_authenticated:
         return redirect(url_for('main.aboutus'))
     if form.validate_on_submit():
-        msg = Message(form.subject.data, sender='contact500words@gmail.com', recipients=['lyndi321@gmail.com'])
+        msg = Message(form.subject.data,
+                      sender='contact500words@gmail.com',
+                      recipients=['lyndi321@gmail.com'])
         msg.body = """
         From: %s &lt;%s&gt;
         %s
@@ -31,7 +33,9 @@ def about():
 def aboutus():
     form = ContactForm()
     if form.validate_on_submit():
-        msg = Message(form.subject.data, sender='contact500words@gmail.com', recipients=['lyndi321@gmail.com'])
+        msg = Message(form.subject.data,
+                      sender='contact500words@gmail.com',
+                      recipients=['lyndi321@gmail.com'])
         msg.body = """
         From: %s &lt;%s&gt;
         %s
@@ -39,15 +43,20 @@ def aboutus():
         mail.send(msg)
 
         return render_template('aboutus.html', success=True)
-    return render_template('aboutus.html', form=form, name=current_user.name, email=current_user.email)
+    return render_template('aboutus.html',
+                           form=form,
+                           name=current_user.name,
+                           email=current_user.email)
 
 
 @main.route('/dashboard')
 @login_required
 def dashboard():
     entries = Entry.query.all()
-    
-    return render_template('dashboard.html', name=current_user.name, entries=entries)
+
+    return render_template('dashboard.html',
+                           name=current_user.name,
+                           entries=entries)
 
 
 @main.route('/write', methods=['GET', 'POST'])
@@ -56,7 +65,10 @@ def write():
     form = EntryForm()
 
     if form.validate_on_submit():
-        new_entry = Entry(title=form.title.data, content=form.content.data, word_count=request.form['totalCount'], date_submitted=str(datetime.utcnow().strftime('%Y-%m-%d')))
+        new_entry = Entry(title=form.title.data,
+                          content=form.content.data,
+                          word_count=request.form['totalCount'],
+                          date_submitted=str(datetime.utcnow().strftime('%Y-%m-%d')))
         new_entry.user = current_user
         db.session.add(new_entry)
         db.session.commit()
@@ -73,7 +85,7 @@ def edit(id):
     form.content.data = entry.content
     form.word_count.data = entry.word_count
     db.session.rollback()
-    
+
     if request.method == 'POST' and form.validate_on_submit():
         totalCount = request.form['totalCount']
         if totalCount != '':
