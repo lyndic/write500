@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+    <div class="dashContainer">
+        <div class="greeting">
+            <h2>Hello, {{ name }}!</h2>
+        </div>
+        <div class="innerDash">
+            <div class="recentEntries">
+                {% if entries|length < 1 %}
+                <h2>There are no entries to show. <a href="/write">Write something!</a></h2>
+                <img src="../static/img/scroll.png" alt="">
+                {% else %}
+                <table>
+                    {% for entry in entries %}
+                        <tr>
+                            <td class="entryTitle"><a href="/edit/{{entry.id}}">{{ entry.title }}</a></td>
+                            <td class="extras">{{ entry.word_count }} Words</td>
+                            <td class="extras">{{ entry.date_submitted.strftime('%b %d, %Y') }}</td>
+                            <td><a class="deleteIcon" href="/delete/{{entry.id}}"><img class="trashcan" src="../static/img/trashcan.png" alt=""></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

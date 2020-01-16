@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="banner-container">
+        <a class="banner-box" href="/about">Learn More</a>
+        <a href="/"><h1>Write500</h1></a>
+    </div>
+    <div class="signup">
+        <div class="signup-inner">
+            <h2>Create An Account</h2>
+            <form method="POST">
+            {% from 'includes/_formhelpers.html' import render_field %}
+            {{ form.hidden_tag() }}
+                <div>
+                    {{ render_field(form.name, placeholder='Name') }}
+                </div>
+                <div>
+                    {{ render_field(form.email, placeholder='Email') }}
+                </div>
+                <div>
+                    {{ render_field(form.password, placeholder='Password') }}
+                </div>
+                <div>
+                    {{ render_field(form.confirm, placeholder='Confirm Password') }}
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="features-list">
+            <div class="features-background"></div>
+            <h2>A minimal journal app for all.</h2>
+            <ul>
+                <h3>500 Words has many conveniences, including:</h3>
+                <li>Live word count</li>
+                <li>Tidy, distraction-free writing space</li>
+                <li>Unlimited words per entry</li>
+                <li>Write from anywhere</li>
+                <li>Completely free</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

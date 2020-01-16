@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="banner-container">
+        <a class="banner-box" href="/signup">Create An Account</a>
+        <a href="/"><h1>Write500</h1></a>
+    </div>
+    <div class="aboutContainer">
+        <div class="about">
+            <p>Write500 is a minimalistic writing app that takes
+                the pressure out of writing. The app's live word 
+                counter tracks your total words which is then
+                updated in your user dashboard. The unlimited text editor was built with freestyle writing in
+                mind, but writers are free to use it as they wish.
+                <br>
+                <br>
+                If you have any ideas or suggestions on how we can make 
+                the app better, please drop your thoughts in the form. 
+                Happy writing!
+            </p>
+        </div>
+        <div class="contact" id="contact">
+            <h2>Contact Us</h2>
+            {% if success %}
+                <p>Thank you for your message. We'll get back to you shortly.</p>
+
+            {% else %}
+            {% from 'includes/_formhelpers.html' import render_field %}
+            <form class="contactForm" action="{{ url_for('main.about') }}" method="POST">
+                {{ form.hidden_tag() }}
+                {{ render_field(form.name, placeholder="Name") }}
+                {{ render_field(form.email, placeholder="Email") }}
+                {{ render_field(form.subject, placeholder="Subject") }}
+                {{ render_field(form.body, placeholder="Body", rows=10) }}
+                <button type="submit">Send Message</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

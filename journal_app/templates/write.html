@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% include 'includes/_navbar.html' %}
+
+{% block body %}
+    <div class="writing-container">
+        <form class="writing-space" method="POST">
+            <h2>Create New Entry</h2>
+            {% from 'includes/_formhelpers.html' import render_field %}
+            {{ form.hidden_tag() }}
+            <div class="writing-input">
+                {{ render_field(form.title, placeholder="Title")}}
+            </div>
+            <div class="writing-textarea">
+                {{ render_field(form.content, placeholder="Write something here...", id="content", onkeyup="wordCount(this.value)", cols="30", rows="10")}}
+            </div>
+            <div class="bottom-input">
+                <label class="totalWords" for="totalCount">Total Words:</label>
+                <input type="text" class="totalCount" id="totalCount" name="totalCount" readonly>
+                <button class="writing-button" type="submit">Compose</button>
+            </div>
+        </form>
+        <div class="writing-icons">
+            <div class="icon-container">
+                <h3>Compose New</h3>
+                <a href="/write"><img src="../static/img/pen.png" alt=""></a>
+            </div>
+            <div class="icon-container">
+                <h3>My Entries</h3>
+                <a href="/dashboard"><img src="../static/img/journal.png" alt=""></a>
+            </div>
+            <div class="icon-container">
+                <h3>Contact</h3>
+                <a href="/aboutus"><img src="../static/img/tea.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/wordcounter.js"></script>
+{% endblock %}

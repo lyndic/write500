@@ -1,0 +1,1193 @@
+/* Reset Styles */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* My Code */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    /* background-color: #faf4cf; */
+    background-color: #fce3c8;
+    overflow-x: hidden;
+}
+
+/* _navbar styles */
+
+.nav-container {
+    background-color: #b8d8ba;
+    width: 100%;
+    height: 125px;
+    border-bottom: 2px solid #161718;
+    display: block;
+}
+
+.main-nav {
+    padding: 25px;
+    width: 85%;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: none;
+}
+
+.nav-logo {
+    margin: 0 auto;
+    padding: 17.5px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: #161718;
+}
+
+@media (min-width: 750px) {
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .main-nav li {
+        padding: 20px;
+        font-size: 17px;
+        color: #161718;
+        font-family: 'Arvo', serif;
+    }
+    
+    .main-nav li:hover {
+        cursor: pointer;
+        color: #829082;
+    }
+}
+
+@media (min-width: 1250px) {
+
+    .main-nav ul {
+        width: 600px;
+    }
+
+    .nav-logo { 
+        margin: 0 100px 0 auto;
+        font-size: 40px;
+    }
+}
+
+/* index styles */
+
+.banner-container {
+    margin: auto;
+    width: 100%;
+    height: 125px;
+    background-color: #b8d8ba;
+    text-align: center;
+    border-bottom: 2px solid #111;
+}
+
+.banner-container h1 {
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+    padding: 40px;
+    color: #161718;
+}
+
+.banner-box {
+    display: none;
+}
+
+.brand-container {
+    margin: -48px 0 0 0;
+    height: 350px;
+    text-align: left;
+    padding: 75px;
+    background-image: url(../img/corona.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+    font-family: 'Arvo', serif;
+}
+
+.brand-container p {
+    margin: 0;
+    width: 200px;
+    font-size: 15px;
+    line-height: 25px;
+    color: white;
+}
+
+.brand-intro a {
+    color: #cbe2cc;
+}
+
+.brand-intro a:hover {
+    opacity: .6;
+}
+
+.outer-container {
+    margin: 0 auto 150px;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    background-color: #b8d8ba;
+    border: .5px solid #d9dbbc;
+    border-radius: 4px;
+    box-shadow: 6px 6px 6px #d9dbbc;
+    display: flexbox;
+    flex-wrap: wrap-reverse;
+}
+
+.inner-container {
+    margin: -50px auto auto;
+    width: 300px;
+    height: 200px;
+    padding-top: 0;
+}
+
+.inner-container h2 {
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arvo', serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.inner-container p {
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Arvo', serif;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.login-container {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 375px;
+    flex-direction: column;
+}
+
+.login-container input {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 10px;
+    width: 250px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    border: 1px solid #fce3c8;
+}
+
+.login-input {
+    margin: 0 auto;
+}
+
+.login-container .remember {
+    margin: 0 auto;
+    padding: 15px;
+    width: 170px;
+    font-family: 'Arvo', serif;
+    flex-direction: column;
+}
+
+#remember {
+    margin: 4px;
+    width: 0;
+}
+
+.login-container button {
+    margin: 0 auto;
+    padding: 10px 38px;
+    width: 200px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    background-color: #d9dbbc;
+    border: 1px solid #fce3c8;
+}
+
+.login-container button:hover {
+    cursor: pointer;
+    background-color: #fce3c8;
+    opacity: .7;
+}
+
+.login-container h2 {
+    margin: 5px auto;
+    padding: 20px;
+    font-size: 30px;
+    font-family: 'Arvo', serif;
+    text-align: center;
+}
+
+@media (min-width: 750px) {
+
+    .banner-container {
+        margin: auto;
+        width: 100%;
+        height: 125px;
+        display: inline-block;
+    }
+    
+    .banner-container h1 {
+        width: 250px;
+        font-size: 45px;
+        float: right;
+    }
+    
+    .banner-box {
+        margin: 37.5px;
+        display: block;
+        font-size: 15px;
+        font-family: 'Arvo', serif;
+        padding: 15px;
+        color: #111;
+        background-color: #b8d8ba;
+        float: left;
+        border: 2px solid #111;
+    }
+
+    .banner-container a:hover {
+        background-color: #cbe2cc;
+    }
+
+    .brand-intro {
+        width: 350px;
+        height: 250px;
+    }
+
+    .brand-container p {
+        width: 350px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .outer-container {
+        margin: 75px 0 100px;
+        width: 100%;
+        height: 475px;
+    }
+
+    .inner-container {
+        margin: auto;
+        /* width: 400px; */
+        height: 250px;
+        padding: 30px;
+    }
+
+    .inner-container h2 {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .inner-container p {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .login-container {
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        padding: 30px;
+    }
+
+    .login-container h2 {
+        padding: 15px;
+        font-size: 25px;
+    }
+
+    .login-container input {
+        margin: 4px 24px;
+        width: 230px;
+    }
+
+    .login-container button {
+        margin: 4px auto;
+        width: 200px;
+    }
+}
+
+@media (min-width: 1000px) {
+    
+    .banner-box {
+        margin: 30px 40px;
+        padding: 20px;
+        font-size: 17px;
+    }
+    
+    .brand-container {
+        margin: -48px auto 0;
+        height: 250px;
+        padding: 75px;
+    }
+    
+    .brand-container p {
+        margin: auto 0;
+        width: 700px;
+        height: max-content;
+        font-size: 20px;
+        line-height: 35px;
+        color: white;
+    }
+    
+    .outer-container {
+        margin: 75px auto 75px;
+        height: 350px;
+        display: flex;
+        flex-direction: row;
+        width: 1200px;
+        border-radius: 4px;
+    }
+
+    .inner-container {
+        margin: auto;
+        width: 500px;
+        height: 180px;
+        padding: 10px;
+    }
+    
+    .inner-container h2 {
+        margin: 5px;
+        padding: 20px;
+        font-family: 'Arvo', serif;
+    }
+    
+    .inner-container p {
+        font-family: 'Arvo', serif;
+        font-size: 20px;
+        line-height: 35px;
+    }
+    
+    .login-container {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 300px;
+    }
+    
+    .login-container input {
+        margin: 4px 75px;
+        padding: 10px;
+        width: 350px;
+        font-size: 15px;
+        font-family: 'Arvo', serif;
+    }
+    
+    .login-container .remember {
+        margin: 0 auto;
+        padding: 15px;
+        flex-direction: column;
+    }
+    
+    #remember {
+        width: 20px;
+    }
+    
+    .login-container button {
+        margin: 4px auto;
+        padding: 10px 38px;
+        width: 250px;
+        font-size: 15px;
+        font-family: 'Arvo', serif;
+        align-self: center;
+    }
+    
+    .login-container button:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+    
+    .login-container h2 {
+        margin: 5px;
+        padding: 20px;
+        font-size: 30px;
+        font-family: 'Arvo', serif;
+        text-align: center;
+    }
+}
+
+/* Sign up page styles */
+
+.signup {
+    margin: -3px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-inner {
+    margin: 50px auto;
+    width: 100%;
+    height: 375px;
+    /* padding: 20px; */
+    background-color: #b8d8ba;
+    border: .5px solid #d9dbbc;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #d9dbbc;
+}
+
+.signup h2 {
+    margin: 0 auto;
+    padding: 20px;
+    /* width: 500px; */
+    font-size: 20px;
+    font-family: 'Arvo', serif;
+}
+
+.signup form {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.signup div {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup input {
+    margin: 5px auto;
+    padding: 10px;
+    width: 80%;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    border: 1px solid #fce3c8;
+}
+
+.signup button {
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    background-color: #d9dbbc;
+    border: 1px solid #fce3c8;
+}
+
+.signup button:hover {
+    cursor: pointer;
+    background-color: #fce3c8;
+    opacity: .7;
+}
+
+.features-list {
+    margin: 0 auto;
+    height: 600px;
+    width: 100%;
+    background-image: url("../img/journal.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.features-list ul {
+    margin: auto;
+    padding: 50px 0;
+    width: 100%;
+    list-style-type: circle;
+    text-align: center;
+    background-color: #111;
+    opacity: .8;
+}
+
+.features-list ul li {
+    margin: 15px 20px;
+    font-family: 'Arvo', serif;
+    font-size: 15px;
+    line-height: 20px;
+    color: #b8d8ba;
+}
+
+.features-list h2, h3 {
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+
+.features-list h2 {
+    font-size: 25px;
+    line-height: 30px;
+    border-bottom: 1px solid #fff;
+}
+
+.features-list h3 {
+    font-family: 'Arvo', serif;
+    font-size: 25px;
+}
+
+@media (min-width: 750px) {
+
+    .signup-inner {
+        width: 80%;
+    }
+}
+
+
+@media (min-width: 1250px) {
+    .signup {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .signup-inner {
+        margin: auto 50px;
+        width: 600px;
+        height: 350px;
+        padding: 20px;
+        background-color: #b8d8ba;
+        border: .5px solid #d9dbbc;
+        border-radius: 4px;
+        box-shadow: 5px 5px 5px #d9dbbc;
+    }
+
+    .signup h2 {
+        margin: 0 auto;
+        padding: 20px;
+        width: 500px;
+        font-size: 20px;
+        font-family: 'Arvo', serif;
+    }
+
+    .signup form {
+        margin: 0 auto;
+        width: 500px;
+    }
+
+    .signup input {
+        margin: 5px auto;
+        padding: 10px;
+        width: 500px;
+        font-size: 15px;
+        font-family: 'Arvo', serif;
+        border: 1px solid #fce3c8;
+    }
+
+    .signup button {
+        margin: 20px 125px;
+        padding: 15px;
+        width: 250px;
+        font-size: 15px;
+        font-family: 'Arvo', serif;
+        background-color: #d9dbbc;
+        border: 1px solid #fce3c8;
+    }
+
+    .signup button:hover {
+        cursor: pointer;
+        background-color: #fce3c8;
+    }
+
+    .features-list {
+        margin: auto 0;
+        height: 600px;
+        width: 1000px;
+        background-image: url("../img/journal.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .features-list h2 {
+        margin: 0;
+        text-align: center;
+        color: #fff;
+    } */
+}
+
+
+/* Dashboard Styles */
+
+.dashContainer {
+    margin: 0 0 75px;
+}
+.greeting {
+    padding: 40px;
+    font-size: 35px;
+    font-family: 'Arvo', serif;
+}
+
+.innerDash {
+    display: flex;
+    flex-direction: column;
+}
+
+.recentEntries, .recentAchievements {
+    margin: 0 auto;
+    height: 450px;
+    padding: 20px;
+    font-family: 'Arvo', serif;
+    border-radius: 4px;
+    box-shadow: 8px 8px 8px #d9dbbc;
+}
+
+.recentEntries, .recentAchievements h2 {
+    text-align: center;
+    font-size: 15px;
+}
+
+.recentEntries {
+    margin: 0 auto 40px;
+    width: 75%;
+    background-color: #b8d8ba;
+}
+
+.recentEntries img {
+    margin: 0 auto;
+    padding: 50px;
+    height: 200px;
+}
+
+.recentEntries h2{
+    padding: 25px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.recentEntries td {
+    margin: 0 auto;
+    padding: 10px 10px 20px 10px;
+    width: 15%;
+    font-size: 20px;
+}
+
+.recentEntries .entryTitle {
+    width: 60%;
+    line-height: 25px;
+}
+
+.recentEntries .entryTitle:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #829082;
+}
+
+.recentAchievements {
+    margin: 0 auto;
+    width: 75%;
+    background-color: #d9dbbc;
+}
+
+.extras {
+    display: none;
+}
+
+.deleteIcon img {
+    margin: 0 48px -12px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+@media (min-width: 750px) {
+    .recentEntries {
+        margin-bottom: 150px;
+        height: 700px;
+    }
+
+    .deleteIcon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1250px) {
+
+    .extras {
+        display: table-cell;
+    }
+
+    .greeting {
+        width: 50%;
+        padding: 60px;
+        font-size: 45px;
+    }
+
+    .innerDash {
+        flex-direction: row;
+    }
+
+    .recentEntries {
+        margin: 0 auto 40px;
+        height: 600px;
+    }
+
+    .recentEntries table {
+        width: 100%;
+    }
+    
+    .recentEntries h2, td {
+        font-size: 30px;
+    }
+
+    .deleteIcon img {
+        margin: 0 48px -12px;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* Write page styles */
+
+.writing-container {
+    margin: 0 0 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.writing-container h2 {
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Arvo', serif;
+}
+
+.writing-container button {
+    margin: 25px auto;
+    padding: 15px;
+    width: 30%;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    background-color: #d9dbbc;
+    border: .5px solid #fce3c8;
+}
+
+.writing-container button:hover {
+    background-color: #fce3c8;
+    opacity: .7;
+}
+
+.writing-space {
+    margin: 50px auto 0;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b8d8ba;
+    border: .5px solid #d9dbbc;
+    border-radius: 4px;
+    box-shadow: 8px 8px 8px #d9dbbc;
+}
+
+.writing-space input {
+    margin: 10px auto;
+    padding: 10px;
+    width: 350px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    background-color: #fff;
+    border: 1px solid #d9dbbc;
+}
+
+.writing-space textarea {
+    margin: 10px auto;
+    width: 350px;
+    height: 300px;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    background-color: #fff;
+    border: 1px solid #d9dbbc;
+    display: flex;
+    flex-direction: row;
+    resize: none;
+}
+
+.bottom-input {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.totalWords {
+    margin: auto;
+    width: 15%;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+}
+
+#totalCount {
+    /* margin: 25px 25px 25px 10px; */
+    margin: auto;
+    width: 35%;
+}
+
+#initCount {
+    display: none;
+}
+
+.writing-icons {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.writing-icons .icon-container {
+    margin: 50px 10px;
+    padding: 20px;
+    width: 100%;
+    border: 5px solid #b8d8ba;
+    box-shadow: 8px 8px 8px #d9dbbc;
+}
+
+.icon-container {
+    width: 50px;
+    height:50px;
+}
+
+.icon-container img {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    opacity: .75;
+}
+
+.icon-container h3 {
+    margin: 15px -10px;
+    width: 50px;
+    height: 50px;
+    font-family: 'Arvo', serif;
+    font-size: 15px;
+    color: #161718;
+    text-align: left;
+    position: absolute;
+    z-index: 2;
+}
+
+.icon-container:hover {
+    cursor: pointer;
+    opacity: .65;
+}
+
+@media (min-width: 550px) {
+    .writing-space {
+        width: 450px;
+    }
+}
+
+@media (min-width: 700px) {
+    .writing-space {
+        width: 700px;
+        height: 650px;
+    }
+
+    .writing-space input, .writing-space textarea {
+        width: 600px;
+    }
+
+    .writing-space textarea {
+        height: 400px;
+    }
+
+    .writing-icons .icon-container {
+        padding: 30px;
+    }
+
+    .icon-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .icon-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .icon-container h3 {
+        margin: 45px auto;
+        width: 150px;
+        font-size: 35px;
+        color: #161718;
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+@media (min-width: 1250px) {
+
+    .writing-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .writing-space {
+        margin: auto;
+        width: 800px;
+        height: 800px;
+        padding: 40px;
+    }
+    
+    .writing-space input, .writing-space textarea {
+        width: 800px;
+    }
+
+    .writing-space textarea {
+        height: 550px;
+    }
+
+    .bottom-input {
+        width: 100%;
+    }
+
+    .totalWords {
+        margin: auto 5px;
+        width: 15%;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    #totalCount {
+        margin: auto 25px auto 5px;
+        width: 25%;
+        height: 50px;
+    }
+
+    .writing-container button {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .writing-container button:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+
+    .writing-icons {
+        flex-direction: column;
+    }
+
+    .writing-icons .icon-container {
+        margin: 25px;
+        padding: 30px;
+        width: 250px;
+        height: 250px;
+        border: 5px solid #b8d8ba;
+        position: relative;
+    }
+
+    .icon-container img {
+        margin: 5px;
+        width: 245px;
+        height: 245px;
+        position: absolute;
+        display: block;
+        z-index: 1;
+    }
+
+    .icon-container h3 {
+        margin: 35% -5%;
+        width: 80%;
+        font-family: 'Arvo', serif;
+        font-size: 30px;
+        color: #161718;
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+/* About style */
+.about {
+    margin: 50px 20px 0;
+    padding: 30px;
+    height: max-content;
+    font-size: 20px;
+    font-family: 'Arvo', serif;
+    line-height: 30px;
+    background-color: #d9dbbc;
+}
+
+.about p {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact {
+    margin: 50px auto;
+    width: 90%;
+    background-color: #b8d8ba;
+    border-radius: 4px;
+}
+.contact h2 {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: max-content;
+    font-size: 25px;
+    font-family: 'Arvo', serif;
+    line-height: 35px;
+}
+.contact p {
+    margin: auto;
+    width: 70%;
+    height: 547px;
+    font-size: 20px;
+    font-family: 'Arvo', serif;
+    line-height: 30px;
+    text-align: center;
+}
+.contactForm {
+    margin: 0 auto 10px;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.contactForm input, textarea, button {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    border: 1px solid #fce3c8;
+}
+.contactForm button {
+    background-color: #d9dbbc;
+}
+.contactForm button:hover {
+    cursor: pointer;
+    background-color: #fce3c8;
+    opacity: .7;
+}
+@media (min-width: 1000px) {
+
+    .aboutContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .about {
+        margin: auto;
+        padding: 35px 0;
+        width: 50%;
+        line-height: 30px;
+    }
+
+    .about p {
+        width: 75%;
+    }
+    .contact {
+        width: 40%;
+    }
+    .contact h2 {
+        padding: 30px 0;
+        font-size: 30px;
+    }
+    .contact p {
+        height: 594px;
+    }
+    .contactForm {
+        padding-bottom: 40px;
+    }
+}
+
+
+/* Footer style */
+
+.footer-container {
+    width: 100%;
+    height: 200px;
+    background-color: #161718;
+    display: flex;
+    justify-content: center;
+}
+
+.sm-outer {
+    margin: 0 auto;
+    padding: 30px;
+    width: 300px;
+}
+
+.sm-outer h3 {
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Arvo', serif;
+    color: white;
+    text-align: center;
+}
+
+.sm-inner {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.sm-icon img {
+    width: 50px;
+    padding: 10px;
+}
+
+@media (min-width: 750px) {
+
+    .footer-container {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 1250px) {
+
+    .sm-outer {
+        margin: 0;
+    }
+}
