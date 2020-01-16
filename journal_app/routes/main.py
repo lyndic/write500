@@ -16,17 +16,27 @@ def about():
     if current_user.is_authenticated:
         return redirect(url_for('main.aboutus'))
     if form.validate_on_submit():
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        FROM = "contact500words@gmail.com"
+        TO = "contact500words@gmail.com"
+        NAME = form.name.data
+        RETURN = form.email.data
+        SUBJECT = form.subject.data
+        BODY = form.body.data
+
+        msg = """From: %s\nTo: %s\nSubject: %s\n\n%s
+        """ % (FROM, ", ".join(TO), NAME, RETURN, SUBJECT, BODY)
+
+        server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
         server.starttls()
-        server.ehlo()
-        msg = Message(form.subject.data,
-                      sender='contact500words@gmail.com',
-                      recipients=['lyndi321@gmail.com'])
-        msg.body = """
-        From: %s &lt;%s&gt;
-        %s
-        """ % (form.name.data, form.email.data, form.body.data)
+        # msg = Message(form.subject.data,
+        #               sender='contact500words@gmail.com',
+        #               recipients=['lyndi321@gmail.com'])
+        # msg.body = """
+        # From: %s &lt;%s&gt;
+        # %s
+        # """ % (form.name.data, form.email.data, form.body.data)
+        server.login("contact500words@gmail.com", "ruffruff2020")
         server.send(msg)
         server.quit()
 
