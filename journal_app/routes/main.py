@@ -16,29 +16,31 @@ def about():
     if current_user.is_authenticated:
         return redirect(url_for('main.aboutus'))
     if form.validate_on_submit():
-        FROM = "contact500words@gmail.com"
-        TO = "contact500words@gmail.com"
-        NAME = form.name.data
-        RETURN = form.email.data
-        SUBJECT = form.subject.data
-        BODY = form.body.data
+        fromAddr = "contact500words@gmail.com"
+        toAddr = "lyndi321@gmail.com"
+        userEmail = form.email.data
+        name = form.name.data
+        subject = form.subject.data
+        body = form.body.data
 
-        msg = """From: %s\nTo: %s\nSubject: %s\n\n%s
-        """ % (FROM, TO, NAME, RETURN, SUBJECT, BODY)
+        msg = """Name: %s\nEmail: %s\nSubject: %s\n\n%s
+        """ % (name, ", ".join(userEmail), subject, body)
 
-        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        # msg = Message(form.subject.data,
-        #               sender='contact500words@gmail.com',
-        #               recipients=['lyndi321@gmail.com'])
-        # msg.body = """
-        # From: %s &lt;%s&gt;
-        # %s
-        # """ % (form.name.data, form.email.data, form.body.data)
         server.login("contact500words@gmail.com", "ruffruff2020")
-        server.send(msg)
+        server.sendmail(fromAddr, toAddr, msg)
         server.close()
+        # with mail.connect() as conn:
+        #     msg = Message(form.subject.data,
+        #                   sender='contact500words@gmail.com',
+        #                   recipients=['lyndi321@gmail.com'])
+        #     msg.body = """
+        #     From: %s &lt;%s&gt;
+        #     %s
+        #     """ % (form.name.data, form.email.data, form.body.data)
+        #     conn.send(msg)
 
         return render_template('about.html', success=True)
     return render_template('about.html', form=form)
