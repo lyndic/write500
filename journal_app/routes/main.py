@@ -24,7 +24,7 @@ def about():
         BODY = form.body.data
 
         msg = """From: %s\nTo: %s\nSubject: %s\n\n%s
-        """ % (FROM, ", ".join(TO), NAME, RETURN, SUBJECT, BODY)
+        """ % (FROM, TO, NAME, RETURN, SUBJECT, BODY)
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
