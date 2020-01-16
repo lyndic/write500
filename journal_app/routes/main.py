@@ -23,7 +23,8 @@ def about():
         userEmail = form.email.data
         name = form.name.data
         subject = form.subject.data
-        body = form.body.data
+        body = ("Name: " + form.name.data
+                + " " + form.body.data)
 
         msg = """Name: %s\nEmail: %s\nSubject: %s\n\n%s
         """ % (name, ", ".join(userEmail), subject, body)
@@ -32,7 +33,7 @@ def about():
         server.ehlo()
         server.starttls()
         server.login(mail_username, mail_password)
-        server.sendmail(userEmail, toAddr, msg)
+        server.sendmail(fromAddr, toAddr, msg)
         server.close()
 
         return render_template('about.html', success=True)
