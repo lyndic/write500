@@ -7,7 +7,7 @@ import smtplib
 from journal_app.settings import (mail_username, mail_password, mail_server,
                                   mail_port, mail_receipt)
 from journal_app.extensions import db, mail
-from journal_app.models import Entry, User, EntryForm, ContactForm
+from journal_app.models import Entry, EntryForm, ContactForm
 
 main = Blueprint('main', __name__)
 
@@ -32,17 +32,8 @@ def about():
         server.ehlo()
         server.starttls()
         server.login(mail_username, mail_password)
-        server.sendmail(fromAddr, toAddr, msg)
+        server.sendmail(userEmail, toAddr, msg)
         server.close()
-        # with mail.connect() as conn:
-        #     msg = Message(form.subject.data,
-        #                   sender='contact500words@gmail.com',
-        #                   recipients=['lyndi321@gmail.com'])
-        #     msg.body = """
-        #     From: %s &lt;%s&gt;
-        #     %s
-        #     """ % (form.name.data, form.email.data, form.body.data)
-        #     conn.send(msg)
 
         return render_template('about.html', success=True)
     return render_template('about.html', form=form)
