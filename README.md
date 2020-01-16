@@ -15,4 +15,4 @@ Write 500 is a simple writing app that minimizes the social media noise so users
 * Create a clean app with no social pressure.
     * Cultivate an inviting space for people to *just write*.
 ---
- Check out [Write500!](https://write500.heroku.com)
+ Check out [Write500!](https://write500.herokuapp.com)
