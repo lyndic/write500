@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import current_user, login_required
 from flask_mail import Message
 from datetime import datetime
+import smtplib
 
 from journal_app.extensions import db, mail
 from journal_app.models import Entry, User, EntryForm, ContactForm
@@ -15,6 +16,10 @@ def about():
     if current_user.is_authenticated:
         return redirect(url_for('main.aboutus'))
     if form.validate_on_submit():
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
         msg = Message(form.subject.data,
                       sender='contact500words@gmail.com',
                       recipients=['lyndi321@gmail.com'])
@@ -23,6 +28,7 @@ def about():
         %s
         """ % (form.name.data, form.email.data, form.body.data)
         mail.send(msg)
+        server.quit()
 
         return render_template('about.html', success=True)
     return render_template('about.html', form=form)
