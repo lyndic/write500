@@ -17,7 +17,7 @@ def about():
     isLoggedIn = False
     if current_user.is_authenticated:
         isLoggedIn = True
-        return redirect(url_for('main.aboutus', isLoggedIn=isLoggedIn))
+        return render_template('main.about', isLoggedIn=isLoggedIn))
     if form.validate_on_submit():
         fromAddr = mail_username
         toAddr = mail_receipt
