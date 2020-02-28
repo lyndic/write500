@@ -14,8 +14,10 @@ main = Blueprint('main', __name__)
 @main.route('/about', methods=['GET', 'POST'])
 def about():
     form = ContactForm()
+    isLoggedIn = False
     if current_user.is_authenticated:
-        return redirect(url_for('main.aboutus'))
+        isLoggedIn = True
+        return redirect(url_for('main.aboutus', isLoggedIn=isLoggedIn))
     if form.validate_on_submit():
         fromAddr = mail_username
         toAddr = mail_receipt
@@ -37,7 +39,7 @@ def about():
         server.close()
 
         return render_template('about.html', success=True)
-    return render_template('about.html', form=form)
+    return render_template('about.html', form=form, isLoggedIn=isLoggedIn)
 
 
 @main.route('/aboutus')
