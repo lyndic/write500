@@ -2,9 +2,9 @@
 
 {% block body %}
     <div class="banner-container">
-        {% if isLoggedIn == False %}
+        {% if !isLoggedIn %}
             <a class="banner-box" href="/signup">Create An Account</a>
-        {% else %}
+        {% elif isLoggedIn %}
             <a class="banner-box" href="/signup">Logout</a>
         {% endif %}
         <a href="/"><h1>Write500</h1></a>
